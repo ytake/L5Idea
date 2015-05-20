@@ -1,0 +1,4 @@
+<?php
+
+get('/', 'IndexController@index');
+
