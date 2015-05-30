@@ -23,5 +23,17 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        if($this->app->environment() === 'local') {
+            $this->app->register('Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider');
+        }
+
+        $this->app->bind(
+            'App\Repositories\EntryRepositoryInterface',
+            'App\Repositories\EntryRepository'
+        );
+        $this->app->bind(
+            'App\Repositories\Criteria\Entryable',
+            'App\Repositories\Criteria\EntryDataAccessObject'
+        );
     }
 }

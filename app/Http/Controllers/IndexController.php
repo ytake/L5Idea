@@ -9,9 +9,12 @@ namespace App\Http\Controllers;
 class IndexController extends AbstractController
 {
 
+    /**
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
         return view('welcome');
     }
-    
+
 }

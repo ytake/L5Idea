@@ -1,4 +1,3 @@
 <?php
-
-get('/', 'IndexController@index');
-
+// uri: /entry[GET|POST]
+resource('entry', 'EntryController', ['only' => ['show', 'store']]);

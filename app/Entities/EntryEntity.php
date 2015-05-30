@@ -6,27 +6,29 @@ namespace App\Entities;
  * @package App\Entities
  * @author yuuki.takezawa<yuuki.takezawa@comnect.jp.net>
  */
-class EntryEntity
+class EntryEntity implements Entityable
 {
 
-    /** @var integer */
+    /** @var int */
     private $entry_id;
 
     /** @var string  */
-    private $title;
+    public $title;
 
     /** @var string */
-    private $content;
+    public $content;
 
     /** @var string */
-    private $created_at;
+    public $created_at;
 
     /** @var string */
-    private $updated_at;
+    public $updated_at;
 
-    public function __call($name, $arguments)
+    /**
+     * @return int
+     */
+    public function getId()
     {
-
+        return $this->entry_id;
     }
-
 }
