@@ -9,7 +9,6 @@ use App\Entities\EntryEntity;
  */
 interface EntryRepositoryInterface
 {
-
     /**
      * @param EntryEntity $item
      * @return EntryEntity

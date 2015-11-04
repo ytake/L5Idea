@@ -5,13 +5,15 @@ use App\Services\EntryService;
 
 /**
  * Class EntryController
+ * @Resource("entry",only={"show", "store"})
+ *
  * @package App\Http\Controllers
- * @author yuuki.takezawa<yuuki.takezawa@comnect.jp.net>
+ * @author  yuuki.takezawa<yuuki.takezawa@comnect.jp.net>
  */
 class EntryController extends AbstractController
 {
 
-    /** @var EntryService  */
+    /** @var EntryService */
     protected $entry;
 
     /**
@@ -24,6 +26,7 @@ class EntryController extends AbstractController
 
     /**
      * @param $id
+     *
      * @return \App\Entities\EntryEntity|null
      */
     public function show($id = null)
@@ -41,6 +44,4 @@ class EntryController extends AbstractController
             'content' => 'Laravel makes connecting with databases and running queries extremely simple.',
         ]);
     }
-
-
 }

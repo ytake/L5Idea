@@ -8,7 +8,6 @@ namespace App\Entities;
  */
 class EntryEntity implements Entityable
 {
-
     /** @var int */
     private $entry_id;
 

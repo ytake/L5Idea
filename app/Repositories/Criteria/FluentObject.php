@@ -11,7 +11,6 @@ use Illuminate\Support\Fluent;
  */
 class FluentObject
 {
-
     /** @var string  */
     protected $identity;
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 /**
@@ -8,13 +9,12 @@ namespace App\Http\Controllers;
  */
 class IndexController extends AbstractController
 {
-
     /**
+     * @Get("/", as="index")
      * @return \Illuminate\View\View
      */
     public function index()
     {
-        return view('welcome');
+        return view('index');
     }
-
 }

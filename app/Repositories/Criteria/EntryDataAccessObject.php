@@ -11,7 +11,6 @@ use Illuminate\Database\DatabaseManager;
  */
 class EntryDataAccessObject extends FluentObject implements Entryable
 {
-
     /** @var DatabaseManager */
     protected $db;
 
@@ -66,5 +65,4 @@ class EntryDataAccessObject extends FluentObject implements Entryable
         return $this->db->connection()
             ->table($this->table)->get();
     }
-
 }

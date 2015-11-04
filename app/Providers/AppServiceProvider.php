@@ -12,7 +12,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app['aspect.annotation.register']->registerAnnotations([
+            app_path('Annotation/Reserve.php')
+        ]);
+        /** @var \Ytake\LaravelAspect\AspectManager $aspect */
+        $aspect = $this->app['aspect.manager'];
+        $aspect->register(\App\Modules\CacheableModule::class);
+        $aspect->register(\App\Modules\CacheEvictModule::class);
+        $aspect->register(\App\Modules\ReserveModule::class);
     }
 
     /**
@@ -28,12 +35,17 @@ class AppServiceProvider extends ServiceProvider
         }
 
         $this->app->bind(
-            'App\Repositories\EntryRepositoryInterface',
-            'App\Repositories\EntryRepository'
+            \App\Repositories\EntryRepositoryInterface::class,
+            \App\Repositories\EntryRepository::class
         );
         $this->app->bind(
-            'App\Repositories\Criteria\Entryable',
-            'App\Repositories\Criteria\EntryDataAccessObject'
+            \App\Repositories\Criteria\Entryable::class,
+            \App\Repositories\Criteria\EntryDataAccessObject::class
+        );
+
+        $this->app->bind(
+            \App\Repositories\ReserveRepositoryInterface::class,
+            \App\Repositories\ReserveRepository::class
         );
     }
 }
